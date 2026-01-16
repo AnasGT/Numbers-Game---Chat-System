@@ -1,0 +1,5 @@
+{
+  "name": "MindMatch: Number Duel",
+  "description": "A strategic 3-digit number guessing game where you compete against an AI opponent in a chat-based interface. Guess the secret code before the AI guesses yours.",
+  "requestFramePermissions": []
+}
