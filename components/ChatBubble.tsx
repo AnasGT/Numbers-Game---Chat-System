@@ -1,6 +1,4 @@
-import React from 'react';
 import { Message, Player } from '../types';
-import { formatFeedbackMessage } from '../utils/gameLogic';
 
 interface ChatBubbleProps {
   message: Message;
@@ -9,7 +7,6 @@ interface ChatBubbleProps {
 export const ChatBubble: React.FC<ChatBubbleProps> = ({ message }) => {
   const isUser = message.sender === Player.USER;
   const isSystem = message.sender === Player.SYSTEM;
-  const isAI = message.sender === Player.AI;
 
   if (isSystem) {
     return (

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { GameStatus, Player, Message, TurnHistoryItem } from './types';
 import { generateSecretNumber, isValidNumber, calculateFeedback } from './utils/gameLogic';
 import { getAIGuess } from './services/geminiService';
@@ -306,10 +306,6 @@ export default function App() {
                 value={inputValue}
                 onChange={(e) => {
                   const val = e.target.value.replace(/[^0-9]/g, '');
-                  // Prevent duplicate digits for better UX
-                  const uniqueVal = Array.from(new Set(val.split(''))).join('');
-                  // Actually, let user type duplicates then fail valid check logic so they learn rules? 
-                  // Or restrict? Let's restrict strictly to 3 chars, but validate uniqueness on submit for simplicity here.
                   setInputValue(val); 
                 }}
                 placeholder={turn === Player.USER ? "Enter 3 digits..." : "Opponent's turn..."}
