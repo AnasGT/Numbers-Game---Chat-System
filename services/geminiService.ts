@@ -92,9 +92,3 @@ function generateSmartGuess(possibleDigits: string[], history: TurnHistoryItem[]
   const shuffled = [...availableForGuess].sort(() => Math.random() - 0.5);
   return shuffled.slice(0, 3).join('');
 }
-    console.error("Gemini AI Error:", error);
-    // Fallback strategy purely random if API fails
-    const randomGuess = String(Math.floor(100 + Math.random() * 900)); 
-    return { guess: randomGuess, banter: "I'm having trouble connecting to the mainframe. I'll guess randomly." };
-  }
-};
