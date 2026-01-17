@@ -1,7 +1,13 @@
 import { GoogleGenAI, Type } from "@google/genai";
 import { TurnHistoryItem } from "../types";
 
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+const API_KEY = process.env.REACT_APP_API_KEY || process.env.API_KEY;
+
+if (!API_KEY) {
+  console.warn("API_KEY not found in environment variables. Please set REACT_APP_API_KEY.");
+}
+
+const ai = new GoogleGenAI({ apiKey: API_KEY || '' });
 
 const MODEL_NAME = 'gemini-3-flash-preview';
 
